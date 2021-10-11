@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2019-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  tp3
+
+  Sample SAM Template for tp3
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+
+Resources:
+  lamda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Handler: index.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        Crear:
+          Type: Api
+          Properties:
+            Path: /envios
+            Method: post
+        Pendientes:
+          Type: Api
+          Properties:
+            Path: /envios/pendientes
+            Method: get
+        Entregas:
+          Type: Api
+          Properties:
+            Path: /envios/{idEnvio}/entregado
+            Method: put
+
+
