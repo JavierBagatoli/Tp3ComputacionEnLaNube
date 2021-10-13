@@ -2,7 +2,7 @@
 
 Si no se tiene creada la red de docker, se debe crear con:
 
-docker networwor create awslocal
+docker network create awslocal
 
 luego levantamos un docker que pueda usar el puerto 8000:
 
